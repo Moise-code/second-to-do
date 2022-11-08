@@ -1,5 +1,8 @@
 import Methods from './utils.js';
 
+ let id;
+ let curStatus;
+
 export default class Interactive {
 static toggleCompleted = (id, curStatus) => {
   const todoList = Methods.getLocalStorageData();
@@ -10,8 +13,7 @@ static toggleCompleted = (id, curStatus) => {
 
 static addCheckEvent = () => {
   document.querySelectorAll('.checkbox').forEach((box) => box.addEventListener('change', () => {
-    let id;
-    let curStatus;
+    
     if (box.id > 0) {
       id = box.id - 1;
     } else {
